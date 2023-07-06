@@ -1,6 +1,6 @@
 # bootcamp-password
 
-Code to create a password based on some user input
+Code to create a password based on some user input.
 
 # Description
 
@@ -19,3 +19,16 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 https://www.w3schools.com/js/default.asp - very useful for just looking up different math functions and functions in general along with the arguments they take.  
 https://www.codespeedy.com/shuffle-characters-of-a-string-in-javascript/ - found this when looking to see if JavaScript had a built in shuffle function.  
 https://trekhleb.medium.com/weighted-random-in-javascript-4748ab3a1500 - read through this to see if I could make a weighting function that would affect the random generator when picking a character. This would have allowed for not having to shuffle the password at the end. It did not seem to fit what I wanted, but was informative either way.
+
+# Links and Images
+
+Link to Repo:
+
+- https://github.com/Kylyote/bootcamp-password
+
+Link to Website:
+
+- https://kylyote.github.io/bootcamp-password/
+
+###How the page looks like when some of the console logs are active.  
+![Alt](./Assets/CodewithConsoleLog.png)

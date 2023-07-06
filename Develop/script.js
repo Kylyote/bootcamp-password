@@ -99,7 +99,7 @@ passLength = prompt("How long should the password be, choose a number between 8 
     }
   }
   // Randomize the string to better obfuscate the beginning 1-4 character generation. Used code demostrated as linked in the README.
-  //let shufflePass = newPass.split();
+  let shufflePass = newPass.split();
 
 
     //stuff for testing to make sure everything is working before buidling the next part
@@ -107,18 +107,18 @@ passLength = prompt("How long should the password be, choose a number between 8 
     // var lowTest = generateLower();
     // var numTest = generateNum();
     // var symTest = generateSym();
-    console.log(passLength);
-    console.log(capChoice);
-    console.log(lowChoice);
-    console.log(numChoice);
-    console.log(symChoice);
+    // console.log(passLength);
+    // console.log(capChoice);
+    // console.log(lowChoice);
+    // console.log(numChoice);
+    // console.log(symChoice);
     // console.log(capTest);
     // console.log(lowTest);
     // console.log(numTest);
     // console.log(symTest);
-    console.log(newPassLength);
-    console.log(newPass);
-    console.log(newPass.length);
+    // console.log(newPassLength);
+    // console.log(newPass);
+    // console.log(newPass.length);
   // write code (functions) that pick random characters, need to have it intelligently pick based on bool returns from confirm. Use Math.random, Math.floor, and the length of strings. 
 
 
