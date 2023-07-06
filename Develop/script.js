@@ -34,85 +34,94 @@ const symList = "!#$%&'\"()*+,-./:;<=>?@[]^_`{|}~";
 // ask user for parameters using prompt(), can use confirm() which returns yes or no, return bool. Possibly use if else statements to check for password length
   
 passLength = prompt("How long should the password be, choose a number between 8 and 128", 0);
-  passLength = parseInt(passLength);
-  if (passLength < 8 || passLength > 128){
-    return("You must pick a password length between 8 and 128 characters.");
-  } else if (isNaN(passLength)) {
-    return("You must choose a valid numerical answer between 8 and 128.");
-  } else {
-    lowChoice = confirm("Would you like to use lower case letters?");
-    capChoice = confirm("Would you like to use capital letters?");
-    numChoice = confirm("Would you like numbers in your password?");
-    symChoice = confirm("Would you like to use symbols?");
+    passLength = parseInt(passLength);
+    if (passLength < 8 || passLength > 128){
+      return("You must pick a password length between 8 and 128 characters.");
+    } else if (isNaN(passLength)) {
+      return("You must choose a valid numerical answer between 8 and 128.");
+    } else{
+      lowChoice = confirm("Would you like to use lower case letters?");
+      capChoice = confirm("Would you like to use capital letters?");
+      numChoice = confirm("Would you like numbers in your password?");
+      symChoice = confirm("Would you like to use symbols?");
+    }
+    // Fixes case in which no options are chosen which caused webpage to become unresponsive
+  while (!lowChoice && !capChoice && !numChoice && !symChoice){
+    alert("You must choose at least one option for a password to be generated!");
+    return("Error: No Characters To Generate Password From!")
   }
+    // create random character generation functions that can be called on by the main code
+    function generateCapital() {
+      return capLetList[Math.floor(Math.random() * capLetList.length)];
+    }
+    function generateLower() {
+      return lowLetList[Math.floor(Math.random() * lowLetList.length)];
+    }
+    function generateNum() {
+      return numList[Math.floor(Math.random() * numList.length)];
+    }
+    function generateSym() { 
+      return symList[Math.floor(Math.random() * symList.length)];
+    }
 
-  // create random character generation functions that can be called on by the main code
-  function generateCapital() {
-    return capLetList[Math.floor(Math.random() * capLetList.length)];
-  }
-  function generateLower() {
-    return lowLetList[Math.floor(Math.random() * lowLetList.length)];
-  }
-  function generateNum() {
-    return numList[Math.floor(Math.random() * numList.length)];
-  }
-  function generateSym() { 
-    return symList[Math.floor(Math.random() * symList.length)];
-  }
-
-// Create something to at least get one of each character choosen
-if (lowChoice === true){
-  newPass += generateLower();
-}
-if (capChoice === true){
-  newPass += generateCapital();
-}
-if (numChoice === true){
-  newPass += generateNum();
-}
-if (symChoice === true){
-  newPass += generateSym();
-}
-let newPassLength = passLength - newPass.length;
-// Create the rest of the ~~owl~~ password
-for (let i = 0; i < newPassLength;){
-  if (lowChoice === true && i < newPassLength){
+  // Create something to at least get one of each character choosen
+  if (lowChoice === true){
     newPass += generateLower();
-    i++;
   }
-  if (capChoice === true && i < newPassLength){
+  if (capChoice === true){
     newPass += generateCapital();
-    i++;
   }
-  if (numChoice === true && i < newPassLength){
+  if (numChoice === true){
     newPass += generateNum();
-    i++;
   }
-  if (symChoice === true && i < newPassLength){
+  if (symChoice === true){
     newPass += generateSym();
-    i++;
   }
-}
-  //stuff for testing to make sure everything is working before buidling the next part
-  // var capTest = generateCapital();
-  // var lowTest = generateLower();
-  // var numTest = generateNum();
-  // var symTest = generateSym();
-  console.log(passLength);
-  console.log(capChoice);
-  console.log(lowChoice);
-  console.log(numChoice);
-  console.log(symChoice);
-  // console.log(capTest);
-  // console.log(lowTest);
-  // console.log(numTest);
-  // console.log(symTest);
-console.log(newPassLength);
-console.log(newPass);
-console.log(newPass.length);
-// write code (functions) that pick random characters, need to have it intelligently pick based on bool returns from confirm. Use Math.random, Math.floor, and the length of strings. 
+  //Creates new variable to better control password length to it matches input length. 
+  let newPassLength = passLength - newPass.length;
+  // Create the rest of the ~~owl~~ password
+  for (let i = 0; i < newPassLength;){
+    if (lowChoice === true && i < newPassLength){
+      newPass += generateLower();
+      i++;
+    }
+    if (capChoice === true && i < newPassLength){
+      newPass += generateCapital();
+      i++;
+    }
+    if (numChoice === true && i < newPassLength){
+      newPass += generateNum();
+      i++;
+    }
+    if (symChoice === true && i < newPassLength){
+      newPass += generateSym();
+      i++;
+    }
+  }
+  // Randomize the string to better obfuscate the beginning 1-4 character generation. Used code demostrated as linked in the README.
+  //let shufflePass = newPass.split();
 
 
-// return the generated password here
+    //stuff for testing to make sure everything is working before buidling the next part
+    // var capTest = generateCapital();
+    // var lowTest = generateLower();
+    // var numTest = generateNum();
+    // var symTest = generateSym();
+    console.log(passLength);
+    console.log(capChoice);
+    console.log(lowChoice);
+    console.log(numChoice);
+    console.log(symChoice);
+    // console.log(capTest);
+    // console.log(lowTest);
+    // console.log(numTest);
+    // console.log(symTest);
+    console.log(newPassLength);
+    console.log(newPass);
+    console.log(newPass.length);
+  // write code (functions) that pick random characters, need to have it intelligently pick based on bool returns from confirm. Use Math.random, Math.floor, and the length of strings. 
+
+
+  // return the generated password here
   return newPass; // replace "temp password" with the password variable
 }
