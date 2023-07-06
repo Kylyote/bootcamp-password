@@ -7,6 +7,10 @@ Code to create a password based on some user input
 - Code takes user input through prompt windows
 - User can specify password length from 8-128 characters long
 - Code checks for validity of user input and outputs warnings as alerts and text into password box
+- Code returns password between 8 and 128 characters that picks from user selected capital letters, lower case letters, numbers, and special characters
+- Used let instead of var as practice
+
+Where I noticed I could improve on this project in particular was I did not branch and push code as much as I should. I got distracted by making code that functioned and reading up on functions.
 
 # Sources
 
