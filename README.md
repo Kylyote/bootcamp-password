@@ -12,6 +12,9 @@ Code to create a password based on some user input.
 
 Where I noticed I could improve on this project in particular was I did not branch and push code as much as I should. I got distracted by making code that functioned and reading up on functions.
 
+##Second Submission Changes
+Moved script.js and style.css to their own folders in Assets and removed Develop folder.
+
 # Sources
 
 Worked a little with Nedda Elsayed. She reminded me of the += command which helped shorten the code a little.  
@@ -31,4 +34,4 @@ Link to Website:
 - https://kylyote.github.io/bootcamp-password/
 
 ###How the page looks like when some of the console logs are active.  
-![Alt](./Assets/CodewithConsoleLog.png)
+![Alt](./Assets/img/CodewithConsoleLog.png)
