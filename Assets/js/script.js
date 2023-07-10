@@ -10,7 +10,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button, write all the new stuff below here. 
@@ -24,7 +23,7 @@ function generatePassword() {
   let numChoice = false;
   let symChoice = false; 
   // Variable for storing password
-  let newPass = "1";
+  let newPass = "";
   // Create list of constants to be choosen from for the password
 const capLetList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowLetList = capLetList.toLowerCase();
@@ -38,7 +37,7 @@ passLength = prompt("How long should the password be, choose a number between 8 
     if (passLength < 8 || passLength > 128){
       return("You must pick a password length between 8 and 128 characters.");
     } else if (isNaN(passLength)) {
-      return("You must choose a valid numerical answer between 8 and 128.");
+      return("You must choose a valid numerical value between 8 and 128.");
     } else{
       lowChoice = confirm("Would you like to use lower case letters?");
       capChoice = confirm("Would you like to use capital letters?");
@@ -91,16 +90,27 @@ passLength = prompt("How long should the password be, choose a number between 8 
     }
     if (numChoice === true && i < newPassLength){
       newPass += generateNum();
-      i++;
+      i++;5
     }
     if (symChoice === true && i < newPassLength){
       newPass += generateSym();
       i++;
     }
   }
+  console.log(newPass);
   // Randomize the string to better obfuscate the beginning 1-4 character generation. Used code demostrated as linked in the README.
-  let shufflePass = newPass.split();
-
+   //function shuffle(pass) {
+    let shufflePass = newPass.split(""); //splits sptring into array
+    console.log(shufflePass);
+    //sort() method can have a compare function few into it that can be positive or negative. Math.random() and the 0.5 add chaos into the sort method on eeach implementation.
+    shufflePass.sort(function() {  
+      return 0.5 - Math.random();
+    });
+    console.log(shufflePass);
+    newPass = shufflePass.join("");  //join array back together. 
+    //return pass;
+  //}
+  //newPass = shuffle(newPass);
 
     //stuff for testing to make sure everything is working before buidling the next part
     // var capTest = generateCapital();
@@ -119,9 +129,8 @@ passLength = prompt("How long should the password be, choose a number between 8 
     // console.log(newPassLength);
     // console.log(newPass);
     // console.log(newPass.length);
-  // write code (functions) that pick random characters, need to have it intelligently pick based on bool returns from confirm. Use Math.random, Math.floor, and the length of strings. 
 
 
   // return the generated password here
-  return newPass; // replace "temp password" with the password variable
+  return newPass;
 }
