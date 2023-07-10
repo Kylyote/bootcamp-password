@@ -90,7 +90,7 @@ passLength = prompt("How long should the password be, choose a number between 8 
     }
     if (numChoice === true && i < newPassLength){
       newPass += generateNum();
-      i++;
+      i++;5
     }
     if (symChoice === true && i < newPassLength){
       newPass += generateSym();
@@ -99,18 +99,18 @@ passLength = prompt("How long should the password be, choose a number between 8 
   }
   console.log(newPass);
   // Randomize the string to better obfuscate the beginning 1-4 character generation. Used code demostrated as linked in the README.
-   function shuffle(pass) {
-    let shufflePass = pass.split(""); //splits sptring into array
+   //function shuffle(pass) {
+    let shufflePass = newPass.split(""); //splits sptring into array
     console.log(shufflePass);
     //sort() method can have a compare function few into it that can be positive or negative. Math.random() and the 0.5 add chaos into the sort method on eeach implementation.
     shufflePass.sort(function() {  
       return 0.5 - Math.random();
     });
     console.log(shufflePass);
-    pass = shufflePass.join("");  //join array back together. 
-    return pass;
-  }
-  newPass = shuffle(newPass);
+    newPass = shufflePass.join("");  //join array back together. 
+    //return pass;
+  //}
+  //newPass = shuffle(newPass);
 
     //stuff for testing to make sure everything is working before buidling the next part
     // var capTest = generateCapital();

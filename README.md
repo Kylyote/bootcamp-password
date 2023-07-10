@@ -12,8 +12,9 @@ Code to create a password based on some user input.
 
 Where I noticed I could improve on this project in particular was I did not branch and push code as much as I should. I got distracted by making code that functioned and reading up on functions.
 
-##Second Submission Changes
-Moved script.js and style.css to their own folders in Assets and removed Develop folder.
+## Second Submission Changes
+
+Moved script.js and style.css to their own folders in Assets and removed Develop folder. Removed "1" in newPass string. Created a string randomizing section that scrambles the new password string. Known issue is that the string will be made up of equal amounts of each selected character option.
 
 # Sources
 
