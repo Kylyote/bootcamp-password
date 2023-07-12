@@ -35,4 +35,4 @@ Link to Website:
 - https://kylyote.github.io/bootcamp-password/
 
 ###How the page looks like when some of the console logs are active.  
-![Alt](./Assets/img/CodewithConsoleLog.png)
+![Alt](./Assets/img/CodeWithConsoleLog.png)
